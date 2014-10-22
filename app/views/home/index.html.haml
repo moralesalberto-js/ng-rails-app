@@ -1,4 +1,10 @@
-%div{ 'ng-app' => true }
-  %input{ 'ng-model' =>'name', 'type' => 'text' }
-  %h1
-    {{ name }}
+// name the app with the module name 'myApp' which is going
+// to be defined in the app.js section
+
+#navbar{ 'ng-controller' => 'operationsController'}
+  = link_to 'Clock', '', 'ng-click' => 'operations.clock.toggleVisible();'
+
+  #clock{ 'ng-show' => 'operations.clock.visible;'}
+    %div{'ng-controller' => 'clockController'}
+      {{ clock }}
+
