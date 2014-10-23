@@ -2,9 +2,8 @@
 // to be defined in the app.js section
 
 #navbar{ 'ng-controller' => 'operationsController'}
-  = link_to 'Clock', '', 'ng-click' => 'operations.clock.toggleVisible();'
+  = render 'navbar'
 
-  #clock{ 'ng-show' => 'operations.clock.visible;'}
-    %div{'ng-controller' => 'clockController'}
-      {{ clock }}
+  #clock{ 'ng-if' => 'operations.clock.visible;'}
+    = render 'clock'
 
