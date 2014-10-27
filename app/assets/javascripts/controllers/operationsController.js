@@ -10,19 +10,21 @@ angularApp.controller('operationsController', function($scope) {
         toggleVisible : function() {
           self.visible = !self.visible;
         },
-        visible : false
+        visible : true, // by default the clock area is visible
+        clockToDisplay : 'local', // by default we display the local clock
+        displayLocalClock : function () {
+          self.clockToDisplay = 'local';
+        },
+        displayServerClock : function () {
+          self.clockToDisplay = 'server';
+        }
       };
       return self;
     }.call();
 
-    // implement a function that goes to the server to retrieve the
-    // time
-    var _getTimeFromServer = function () {
-      alert('here I go to the server to get the time');
-    };
 
     // this is for operations to allow for other UI elements to show up here
-    return { clock : _clock, getTimeFromServer : _getTimeFromServer };
+    return { clock : _clock };
   }.call();
 });
 

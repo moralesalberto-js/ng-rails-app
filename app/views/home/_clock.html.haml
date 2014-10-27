@@ -1,2 +1,5 @@
-%div{'ng-controller' => 'clockController'}
-  {{ clock.now }}
+%div{'ng-switch' => 'operations.clock.clockToDisplay'}
+  %div{'ng-switch-when' => 'local', 'ng-controller' => 'localClockController'}
+    = render 'clock_ui'
+  %div{'ng-switch-when' => 'server', 'ng-controller' => 'serverClockController'}
+    = render 'clock_ui'

@@ -42,3 +42,8 @@ gem 'angularjs-rails', '~> 1.2.22'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :testing do
+  gem 'byebug'
+  gem 'rspec-rails'
+end
+

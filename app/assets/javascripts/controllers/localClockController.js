@@ -1,5 +1,5 @@
 // this controller runs recursively every second
-angularApp.controller('clockController', function($scope, $timeout) {
+angularApp.controller('localClockController', function($scope, $timeout) {
   $scope.clock = {};
   var updateClock = function () {
     $scope.clock.now = Date();
